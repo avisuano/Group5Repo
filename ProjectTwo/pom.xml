@@ -3,6 +3,7 @@
   <groupId>com.revature</groupId>
   <artifactId>ProjectTwo</artifactId>
   <version>0.0.1-SNAPSHOT</version>
+	<!-- Make sure that Maven is using Java  -->
   	<properties>
 		<maven.compiler.source>1.8</maven.compiler.source>
 		<maven.target.source>1.8</maven.target.source>
