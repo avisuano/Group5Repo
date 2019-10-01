@@ -1,10 +1,24 @@
 package com.tvs.model;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+
+@Table(name="ForumPost")
 public class ForumPost {
+	@Id
+	@Column(name="forumPost_id")
 	public int forumPost_id;
+	@Column(name="forum_id")
 	public int forum_id;
+	@Column(name="msg")
 	public String msg;
+	@Column(name="user_id")
 	public int user_id;
+	@Column(name="isOffensive")
 	public boolean isOffensive;
 	
 	public ForumPost() {

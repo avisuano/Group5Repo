@@ -5,7 +5,7 @@ import com.tvs.model.User;
 import com.tvs.repository.UserRepositoryImpl;
 
 public class UserService {
-		// Gets all movies
+		// Gets all users
 		public List<User> getAllUsers(){
 			return new UserRepositoryImpl().getAllUsers();
 		}

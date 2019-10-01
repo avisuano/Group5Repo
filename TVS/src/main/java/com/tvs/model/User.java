@@ -2,9 +2,12 @@ package com.tvs.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -28,6 +31,14 @@ public class User {
 	@Column(name="isOffensive")
 	public int isOffensive;
 	
+	//Using JoinColumn to add foreign key properties
+	@ManyToMany(fetch=FetchType.EAGER)
+	@JoinColumn(name="FORUM")
+	public Forum forum;
+	
+	@JoinColumn(name="ForumPost")
+	public ForumPost forumPost;
+
 	public User() {
 		super();
 		// TODO Auto-generated constructor stub
