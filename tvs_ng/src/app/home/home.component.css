@@ -1,0 +1,49 @@
+#backgroundcolor{background-color:#485b40; padding: 2pc}
+#headerimg
+{
+    padding-top: 5%;
+    padding-bottom: 4%;
+    background: url("camo_flag.jpg");
+    background-size: contain;
+
+}
+#backgroundimg2
+{
+    background: url("hardhat.jpg")  no-repeat center center fixed;
+    background-size: cover;
+}
+h1
+{
+    text-shadow: 4px 4px 5px #485b40;    
+    color: white;
+    font-weight: 700;
+    font-size: 42pt;
+}
+h2
+{
+    font:bolder; color:white;
+    text-shadow: 4px 4px 5px #485b40;
+    font-weight: 500;
+    font-size: 36pt;
+}
+#button
+{
+    border-color: #485b40;
+    background-color: #485b40;
+    outline-color: #485b40
+}
+#img
+{
+    background: url("radar.jpg") no-repeat center;
+    background-size: cover;
+}
+#img2
+{
+    background: url("dogtag.jpg") no-repeat center;
+    background-size: cover;
+}
+#img3
+{
+    background: url("vet_background.jpg") no-repeat center;
+    background-size: cover;
+}
