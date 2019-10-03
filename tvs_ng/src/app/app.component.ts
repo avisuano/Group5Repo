@@ -8,10 +8,6 @@ import { Component} from '@angular/core';
 })
 export class AppComponent
 {
-<<<<<<< HEAD
-  title = 'Welcome to #TeamVeteranSupport';
-=======
   title = 'tvsAngular';
   private isVisible = false;
->>>>>>> master
 }
