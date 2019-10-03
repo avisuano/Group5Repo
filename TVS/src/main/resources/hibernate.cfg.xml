@@ -4,38 +4,36 @@
         "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
         "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
         
- 		<!-- The root tag of any hibernate configuration file is "hibernate conifuration-->
- 		<hibernate-configuration>
+<!-- The root tag of any hibernate configuration file is "hibernate conifuration-->
+ <hibernate-configuration>
  		<!-- Inside the hibernate configuration goes the session factory -->
- 		<session-factory>
- 		<!-- Inside the session factory goes some properties, such as database url, password, username, and driver -->
+ 	<session-factory>
+ 	
  		<!-- This is a postgresqDSl diver -->
- 		<property name="hibernate.connection.driver_class">org.postgresql.Driver</property>
+ 			<property name="hibernate.connection.driver_class">org.postgresql.Driver</property>
+ 			
  		<!-- This is to make sure it's using PostgreSQL dialect -->
- 		<property name="hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect</property>
+ 			<property name="hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect</property>
+ 			
  		<!-- The name of the database url -->
- 		<property name="hibernate.connection.url">jdbc:postgresql://aws-freetier.cptui994kbtn.us-west-2.rds.amazonaws.com:5432/RevatureProjectsDB</property>
- 		<!-- Database username -->
- 		<property name="hibernate.connection.username">"username"</property>
- 		<!-- Database password -->
- 		<property name="hibernate.connection.password">"password"</property>
+	 		<property name="hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect</property>
+	        <property name="hibernate.connection.url">jdbc:postgresql://database-1.caj2bpeu6fw1.us-east-2.rds.amazonaws.com:5432/postgres</property>
+	        <property name="hibernate.connection.username">postgres</property>
+	        <property name="hibernate.connection.password">password</property>
+	        
  		<!-- This property determines how many connections to your database are allowed. Having more connections speeds up each process, but this will eat up all available connections to your database -->
- 		<property name="hibernate.connection.pool_size">5</property>
+ 			<property name="hibernate.connection.pool_size">5</property>
+ 			
  		<!-- This property simple writes all the of the generated SQL Hibernate is using to the console -->
- 		<property name="show_sql">true</property>
- 		<!-- This property is what tells Hibernate how to deal with a database. There are four values..
- 		CREATE: Hibernate will purge the existing database and create it from scratch.
- 		UPDATE: Hibernate connects to the existing database and interacts it without removing the current data.
- 		VALIDATE: Hibernate validates a pre-existing schema before updating the schema.
- 		CREATE-DROP: Hibernate creates tables and performs DML. When the application/server has stopped, it purges the table.
+ 			<property name="show_sql">true</property>
  		
- 		NOTE: YOU SHOULD NEVER RUN HIBERNATE IN CREATE MODE. -->
- 		<property name="hibernate.hbm2ddl.auto">validate</property>
- 		<property name="hibernate.current_session_context_class">thread</property>
- 		<!-- <mapping resource="gnere.hbm.xml"/> -->
- 		<!-- This tells the session factory which classes and resources being mapped to from the Java models to the DB entities -->
- 		<!-- <mapping class="com.revature.model.Movie"/>
- 		<mapping class="com.revature.model.Genre"/>
- 		<mapping class="com.revature.model.Academy"/> -->
- 		</session-factory>
- 		</hibernate-configuration>
+	 		<property name="hibernate.hbm2ddl.auto">validate</property>
+	 		<property name="hibernate.current_session_context_class">thread</property>
+ 		
+ 		<!-- Mapping our models -->
+	 		<mapping class="com.tvs.model.User"/>
+	        <mapping class="com.tvs.model.Forum"/>
+	        <mapping class="com.tvs.model.ForumPost"/>
+ 		
+ 	</session-factory>
+</hibernate-configuration>

@@ -37,6 +37,6 @@ import { ContactComponent } from './contact/contact.component';
     AppRoutingModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent, HomeComponent]
 })
 export class AppModule { }

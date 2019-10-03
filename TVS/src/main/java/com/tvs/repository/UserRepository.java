@@ -9,4 +9,5 @@ public interface UserRepository {
 	User getUserById(int id); //Get user by ID
 	User getUserByName(String firstname); //Get user by first name
 	void updateUser(User u); //Update user information
+	void deleteUser(String username); //Delete user information
 }

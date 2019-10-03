@@ -11,21 +11,21 @@ import javax.persistence.Table;
 public class ForumPost {
 	@Id
 	@Column(name="forumPost_id")
-	public int forumPost_id;
+	private int forumPost_id;
 	@Column(name="forum_id")
-	public int forum_id;
+	private int forum_id;
 	@Column(name="msg")
-	public String msg;
+	private String msg;
 	@Column(name="user_id")
-	public int user_id;
+	private int user_id;
 	@Column(name="isOffensive")
-	public boolean isOffensive;
+	private boolean isOffensive;
 	
 	public ForumPost() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	
+
 	public ForumPost(int forumPost_id, int forum_id, String msg, int user_id, boolean isOffensive) {
 		super();
 		this.forumPost_id = forumPost_id;
