@@ -5,12 +5,8 @@ import { HomeComponent } from './home/home.component';
 import { CreateAccountComponent } from './create-account/create-account.component';
 
 
-const routes: Routes =
-[
-  {
-    path: "login", 
-   component: LoginComponent
-  },
+
+const routes: Routes = [
   {
     path: "home",
     component: HomeComponent
@@ -18,6 +14,8 @@ const routes: Routes =
   {
     path: "create_account",
     component: CreateAccountComponent
+    path: "login",
+    component: LoginComponent
   }
 ];
 
