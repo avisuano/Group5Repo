@@ -29,4 +29,9 @@ public class UserService {
 		public void updateUser(User u) {
 			new UserRepositoryImpl().updateUser(u);
 		}
+		
+		// Update delete information
+		public void deleteUser(String username) {
+			new UserRepositoryImpl().deleteUser(username);
+		}
 }
