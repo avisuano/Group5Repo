@@ -6,10 +6,11 @@ import { CreateAccountComponent } from './create-account/create-account.componen
 import { SearchComponent } from './search/search.component';
 
 
-const routes: Routes = [
+const routes: Routes = 
+[
   {
-    path: "search", 
-    component: SearchComponent
+    path: "login",
+    component: LoginComponent
   },
   {
     path: "home",
@@ -19,10 +20,6 @@ const routes: Routes = [
     path: "create_account",
     component: CreateAccountComponent
   },
-  {
-    path: "login",
-    component: LoginComponent
-  }
 ];
 
 @NgModule({
