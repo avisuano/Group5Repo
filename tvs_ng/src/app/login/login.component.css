@@ -1,0 +1,12 @@
+#button
+{
+    border-color: red;
+    background-color: #ff4040 ;
+    outline-color: red
+}
+#img
+{
+    background: url("americanflag.jpg") no-repeat center;
+    background-size: cover;
+    padding: 1.45%
+}
