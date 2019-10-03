@@ -12,17 +12,17 @@ public class Forum {
 	
 	@Id
 	@Column(name="forum_id")
-	public int forum_id;
+	private int forum_id;
 	@Column(name="title")
-	public String title;
+	private String title;
 	@Column(name="body")
-	public String body;
+	private String body;
 	@Column(name="isOffensive")
-	public boolean isOffensive;
+	private boolean isOffensive;
 	@Column(name="replies")
-	public int replies;
+	private int replies;
 	@Column(name="user_id")
-	public int user_id;
+	private int user_id;
 	
 	public Forum() {
 		super();
