@@ -30,7 +30,7 @@ public class UserService {
 			new UserRepositoryImpl().updateUser(u);
 		}
 		
-		// Update delete information
+		// Delete user by user name
 		public void deleteUser(String username) {
 			new UserRepositoryImpl().deleteUser(username);
 		}
