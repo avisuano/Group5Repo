@@ -1,7 +1,9 @@
 package com.tvs;
 
 import com.tvs.model.Forum;
+import com.tvs.model.ForumPost;
 import com.tvs.model.User;
+import com.tvs.service.ForumPostService;
 import com.tvs.service.ForumService;
 import com.tvs.service.UserService;
 
@@ -16,28 +18,28 @@ public class Driver {
 		
 		UserService us = new UserService();
 		//Getting list of users
-//		System.out.println(us.getAllUsers()); 
-//		
-//		//Creating new user
-//		User newUser = new User(4, "newuser", "newuser@mail.com", "Jane", "Doe", false, 0);
-//		us.insertUser(newUser);
-//		
-//		System.out.println(us.getAllUsers()); 
-//		
-//		//Getting user by ID
-//		System.out.println(us.getUserById(2));
-//		
-//		//Getting user by name
-//		System.out.println(us.getUserByName("Robert"));
-//		
-//		//Updating User
-//		User newUserUpdate = new User(4, "Jane4321", "jane@mail.com", "Jane", "Doeth", false, 0);
-//		us.updateUser(newUserUpdate);
-//		
-//		//Deleting User by user name
-//		System.out.println(us.getAllUsers()); 
-//		us.deleteUser("Jane4321");
-//		System.out.println(us.getAllUsers()); 
+		System.out.println(us.getAllUsers()); 
+		
+		//Creating new user
+		User newUser = new User(4, "newuser", "newuser@mail.com", "Jane", "Doe", "South Cooper Street 1001", "United States", "TX", 75052, false, 0);
+		us.insertUser(newUser);
+		
+		System.out.println(us.getAllUsers()); 
+		
+		//Getting user by ID
+		System.out.println(us.getUserById(2));
+		
+		//Getting user by name
+		System.out.println(us.getUserByName("Robert"));
+		
+		//Updating User
+		User newUserUpdate = new User(4, "Jane4321", "jane@mail.com", "Jane", "Doeth", "South Cooper Street 1001", "United States", "TX", 75052, false, 0);
+		us.updateUser(newUserUpdate);
+		
+		//Deleting User by user name
+		System.out.println(us.getAllUsers()); 
+		us.deleteUser("Jane4321");
+		System.out.println(us.getAllUsers()); 
 		
 		/*
 		 * CALLING FORUM LOGIC (TO MAKE SURE IT ALL WORKS)
@@ -50,8 +52,7 @@ public class Driver {
 		//Creating new forum
 		Forum newForum = new Forum(6, "New Forum", "This is a new forum body", false, 0, 2);
 		fs.insertForum(newForum);
-		
-		System.out.println(fs.getAllForums());
+		System.out.println(fs.getAllForums()); //looking at result of inserting new forum
 		
 		//Getting forum by ID
 		System.out.println(fs.getForumById(2));
@@ -65,13 +66,41 @@ public class Driver {
 				+ " my military skills/experiences to a position in the civilian world.", 
 				false, 0, 1);
 		fs.updateForum(newForumUpdate);
-		
-		System.out.println(fs.getAllForums());
+		System.out.println(fs.getAllForums()); //looking at result of updating forum
 		
 		//Deleting forum by title
-		System.out.println(fs.getAllForums()); 
+		System.out.println(fs.getAllForums()); //before
 		fs.deleteForum("How do I convert my military skills to civilian skills?");
-		System.out.println(fs.getAllForums()); 
+		System.out.println(fs.getAllForums()); //after
+		
+		/*
+		 * CALLING FORUM POST LOGIC (TO MAKE SURE IT ALL WORKS)
+		 * ****************************************************
+		 */
+		ForumPostService fps = new ForumPostService();
+		System.out.println(fps.getAllForumPosts());		
+		
+		//Creating new forum post
+		ForumPost newForumPost = new ForumPost(4, 3, "You can donate gear to the salvation army too.", 3, false);
+		fps.insertForumPost(newForumPost);
+		
+		System.out.println(fps.getAllForumPosts());	// looking at result of updated forum post
+		
+		//Getting forum post by ID
+		System.out.println(fps.getForumPostById(2));
+		
+		//Updating Forum Post
+		ForumPost newForumPostUpdate = new ForumPost(4, 3, "You can donate gear and supplies"
+				+ " to salvation army or good will.", 3, false);
+		fps.updateForumPost(newForumPostUpdate);
+		
+		//Getting ALL forum posts by specific user
+		System.out.println(fps.getAllForumPostsFromUserId(1));
+		
+		//Deleting forum by title
+		System.out.println(fps.getAllForumPosts()); //before
+		fps.deleteForumPost(4);
+		System.out.println(fps.getAllForumPosts()); //after
 	
 	}
 }
