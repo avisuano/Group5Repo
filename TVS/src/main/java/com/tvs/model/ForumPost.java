@@ -7,7 +7,7 @@ import javax.persistence.Table;
 
 @Entity
 
-@Table(name="ForumPost")
+@Table(name="FORUMPOST")
 public class ForumPost {
 	@Id
 	@Column(name="forumPost_id")
