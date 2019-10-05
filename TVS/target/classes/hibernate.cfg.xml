@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+        
+<!-- The root tag of any hibernate configuration file is "hibernate conifuration-->
+ <hibernate-configuration>
+ 		<!-- Inside the hibernate configuration goes the session factory -->
+ 	<session-factory>
+ 	
+ 		<!-- This is a postgresqDSl diver -->
+ 			<property name="hibernate.connection.driver_class">org.postgresql.Driver</property>
+ 			
+ 		<!-- This is to make sure it's using PostgreSQL dialect -->
+ 			<property name="hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect</property>
+ 			
+ 		<!-- The name of the database url -->
+	 		<property name="hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect</property>
+	        <property name="hibernate.connection.url">jdbc:postgresql://database-1.caj2bpeu6fw1.us-east-2.rds.amazonaws.com:5432/postgres</property>
+	        <property name="hibernate.connection.username">postgres</property>
+	        <property name="hibernate.connection.password">password</property>
+	        
+ 		<!-- This property determines how many connections to your database are allowed. Having more connections speeds up each process, but this will eat up all available connections to your database -->
+ 			<property name="hibernate.connection.pool_size">5</property>
+ 			
+ 		<!-- This property simple writes all the of the generated SQL Hibernate is using to the console -->
+ 			<property name="show_sql">true</property>
+ 		
+	 		<property name="hibernate.hbm2ddl.auto">validate</property>
+	 		<property name="hibernate.current_session_context_class">thread</property>
+ 		
+ 		<!-- Mapping our models -->
+	 		<mapping class="com.tvs.model.User"/>
+	        <mapping class="com.tvs.model.Forum"/>
+	        <mapping class="com.tvs.model.ForumPost"/>
+ 		
+ 	</session-factory>
+</hibernate-configuration>
