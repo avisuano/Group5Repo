@@ -1,0 +1,41 @@
+section 
+{
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 5px;
+}
+
+aside 
+{
+    padding-top: 20px;
+    padding-right: 15px;
+    padding-bottom: 0;
+}
+.container 
+{
+    background-color:white;
+}
+
+.forum-header 
+{
+    background: url("forum-header_trees.jpg") no-repeat center;
+    background-size: cover;
+}
+
+.header 
+{
+   padding-top: 5%;
+   padding-bottom: 5%;
+}
+
+.military-feature
+{
+    background: url("feature_1.jpg") no-repeat center;
+    background-size: cover;
+}
+
+.world-feature
+{
+    background: url("feature_2.jpg") no-repeat center;
+    background-size: cover;
+}

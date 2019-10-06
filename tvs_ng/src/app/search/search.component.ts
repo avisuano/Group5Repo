@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { FormsModule } from '@angular/forms'; 
+import { HttpClient } from '@angular/common/http';
+import { map } from 'rxjs/operators';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-search',
@@ -8,19 +10,23 @@ import { FormsModule } from '@angular/forms';
 })
 export class SearchComponent implements OnInit {
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
 
   ngOnInit() {
   }
 
-  private apiKey = 'AIzaSyBERe0UJKwjez5wZByGBUoEAQx0cy67vEk'
-  address: string = ''
+  private address: ''
 
-  getAdr(){
+  getAdr(string: any) {
     let adr = this.address
     let addressUrl = adr.split(' ').join('+')
-    let url = 'https://maps.googleapis.com/maps/api/geocode/json?address=' + addressUrl + '&key=' + this.apiKey
+    let result = this.getGeo(addressUrl)
+    console.log(result)
+  }
 
-    
+  getGeo(url){
+    let qurl = 'https://maps.googleapis.com/maps/api/geocode/json?address=' + url + '&key=AIzaSyBERe0UJKwjez5wZByGBUoEAQx0cy67vEk'
+    let add = this.http.get(qurl) as Observable<FormData>
+    console.log(add)
   }
 }
