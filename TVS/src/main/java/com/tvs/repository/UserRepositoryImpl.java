@@ -6,6 +6,8 @@ import java.util.List;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
+import org.springframework.stereotype.Repository;
+
 import com.tvs.model.User;
 import com.tvs.util.SessionFactory;
 
@@ -14,7 +16,7 @@ import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
 
-
+@Repository(value="userRepository")
 public class UserRepositoryImpl implements UserRepository {
 	
 	/*

@@ -15,6 +15,7 @@ import { UpdateAccountComponent } from './update-account/update-account.componen
 import { VetdecComponent } from './vetdec/vetdec.component';
 import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
+import { ForumpostComponent } from './forumpost/forumpost.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { ContactComponent } from './contact/contact.component';
     UpdateAccountComponent,
     VetdecComponent,
     AboutComponent,
-    ContactComponent
+    ContactComponent,
+    ForumpostComponent
   ],
   imports: [
     BrowserModule,

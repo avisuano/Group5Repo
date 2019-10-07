@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- This XML file serves as our Application Context (our Bean Factory). It is here
+that we will define our Spring Beans and wire them together. We also configure any
+Spring modules that we're using here.-->
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:c="http://www.springframework.org/schema/c"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.3.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+		
+		<!-- This tells the framework that we want to use an annotation-driven
+		approach to declaring our beans, etc.-->
+		<context:annotation-config></context:annotation-config>
+		
+		<!-- This tells the framework which packages to scan for any annotations
+		you have used. You should always be as specific as possible. -->
+	    <context:component-scan base-package="com.tvs.repository"></context:component-scan>
+	    <context:component-scan base-package="com.tvs.service"></context:component-scan>
+		
+		<!-- This enables the use of the AspectJ style of Spring AOP. -->
+		<!--  <aop:aspectj-autoproxy></aop:aspectj-autoproxy>  -->
+
+</beans>
