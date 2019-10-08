@@ -64,29 +64,16 @@ public class ForumController {
 	public void insertMovie(@RequestBody Forum f) {
 		forumService.insertForum(f);
 	}
-	
-	/*
-	 * When we want to retrieve a value and send it back to the client, 
-	 * there are two useful ways of doing so:
-	 * Using the @PathVariable annotation
-	 * Using the @RequestParam annotation
-	 * 
-	 * Let's first play around with the PathVariable annotation. In order to use it,
-	 * we must place our path variable inside of {} brackets.
-	 */
+
 	@GetMapping(value="/{id}")
-	public Forum getForumById(@PathVariable int id) {
+	public Forum getById(@PathVariable int id){
 		return forumService.getForumById(id);
 	}
 	
+	// @RequestParam grabs the parameter from the query string
 	@GetMapping(value="/byId")
-	public Forum getForumByIdAgain(@RequestParam int id) {
+	public Forum getForumById(@RequestParam int id) {
 		return forumService.getForumById(id);
-	}
-	
-	@GetMapping(value="/byForumId")
-	public ResponseEntity<Forum> getMovieWithResponseEntity(@RequestParam int id) {
-		return new ResponseEntity<>(forumService.getForumById(id), HttpStatus.OK);
 	}
 	
 }

@@ -11,7 +11,6 @@ import com.revature.respository.ForumRepository;
 @Service("forumService")
 public class ForumService {
 	
-	// Still needs work 
 	@Autowired
 	ForumRepository forumRepository;
 //	
