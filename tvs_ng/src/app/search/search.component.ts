@@ -20,12 +20,7 @@ export class SearchComponent implements OnInit {
   getAdr(string: any) {
     let adr = this.address
     let addressUrl = adr.split(' ').join('+')
-    let results = this.getGeo(addressUrl)
-  }
-
-  getGeo(url){
-    let qurl = 'https://maps.googleapis.com/maps/api/geocode/json?address=' + url + '&key=AIzaSyBERe0UJKwjez5wZByGBUoEAQx0cy67vEk'
-    let add = this.http.get(qurl) as Observable<Form>
-    console.log(add)
+    let qurl = 'https://maps.googleapis.com/maps/api/geocode/json?address=' + addressUrl + '&key=AIzaSyBERe0UJKwjez5wZByGBUoEAQx0cy67vEk'
+    console.log(qurl)
   }
 }
