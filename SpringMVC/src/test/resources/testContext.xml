@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.3.xsd"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://www.springframework.org/schema/beans">
+
+	<!-- This is test application context, that is used for testing Spring Controllers. 
+		It used as a configuration for the test classes -->
+
+	<mvc:annotation-driven></mvc:annotation-driven>
+	<context:component-scan base-package="com.revature.web"></context:component-scan>
+
+	<!-- In order to run tests, you need to Mock data for testing the method -->
+	<bean name="sc"
+		class="org.springframework.mock.web.MockServletContext"></bean>
+
+	<!-- Web application context bean, the XmlWebApplicationContext is built 
+		into Spring, and will be autowired into the test -->
+	<!-- <bean name="wac"
+		class="org.springframework.web.context.support.XmlWebApplicationContext">
+		<property name="sc" ref="sc"></property>
+	</bean> -->
+	<bean name="movieService" class="com.revature.service.MovieService"></bean>
+	<bean name="movieRepository" class="com.revature.respository.MovieRepositoryImpl"></bean>
+</beans>
