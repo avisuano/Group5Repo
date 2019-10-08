@@ -1,5 +1,10 @@
 Manifest-Version: 1.0
+<<<<<<< HEAD
 Built-By: oldboot2
 Build-Jdk: 1.8.0_221
+=======
+Built-By: leahmedina1
+Build-Jdk: 1.8.0_121
+>>>>>>> 1b7e12cdb5e201d790bbd4427890b528df711459
 Created-By: Maven Integration for Eclipse
 

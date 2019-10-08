@@ -2,37 +2,52 @@ package com.tvs.service;
 
 import java.util.List;
 
-import com.tvs.model.Forum;
-import com.tvs.repository.ForumRepositoryImpl;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+import com.tvs.model.Forum;
+import com.tvs.repository.ForumRepository;
+
+@Service("forumService")
 public class ForumService {
+	
+	// Still needs work 
+	@Autowired
+	ForumRepository forumRepository;
+//	
+//	//Using constructor injection.
+	
+	public ForumService(ForumRepository forumRepository) {
+		this.forumRepository = forumRepository;
+	}
+	
 	// Gets all forums
 	public List<Forum> getAllForums() {
-		return new ForumRepositoryImpl().getAllForums();
+		return forumRepository.getAllForums();
 	}
 
 	// Inserts a new forum
 	public void insertForum(Forum f) {
-		new ForumRepositoryImpl().insertForum(f);
+		forumRepository.insertForum(f);
 	}
 
 	// Get by forum id
 	public Forum getForumById(int id) {
-		return new ForumRepositoryImpl().getForumById(id);
+		return forumRepository.getForumById(id);
 	}
 
 	// Get forum by title
 	public Forum getForumByName(String title) {
-		return new ForumRepositoryImpl().getForumByName(title);
+		return forumRepository.getForumByName(title);
 	}
 
 	// Update forum information
 	public void updateForum(Forum f) {
-		new ForumRepositoryImpl().updateForum(f);
+		forumRepository.updateForum(f);
 	}
 
 	// Delete forum by title
 	public void deleteForum(String title) {
-		new ForumRepositoryImpl().deleteForum(title);
+		forumRepository.deleteForum(title);
 	}
 }

@@ -15,7 +15,8 @@ import { UpdateAccountComponent } from './update-account/update-account.componen
 import { VetdecComponent } from './vetdec/vetdec.component';
 import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
-import { HttpClientModule, HttpClient } from '@angular/common/http';
+import { ForumpostComponent } from './forumpost/forumpost.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { HttpClientModule, HttpClient } from '@angular/common/http';
     UpdateAccountComponent,
     VetdecComponent,
     AboutComponent,
-    ContactComponent
+    ContactComponent,
+    ForumpostComponent
   ],
   imports: [
     BrowserModule,

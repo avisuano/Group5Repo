@@ -11,11 +11,12 @@ import javax.persistence.criteria.Root;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
+import org.springframework.stereotype.Repository;
 
 import com.tvs.model.Forum;
-//import com.tvs.model.User;
 import com.tvs.util.SessionFactory;
 
+@Repository("forumRepository")
 public class ForumRepositoryImpl implements ForumRepository {
 
 	@Override
