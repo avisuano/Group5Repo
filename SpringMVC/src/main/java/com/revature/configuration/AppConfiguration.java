@@ -4,6 +4,8 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Scope;
 
+import com.revature.respository.ForumRepository;
+import com.revature.respository.ForumRepositoryImpl;
 import com.revature.respository.MovieRepository;
 import com.revature.respository.MovieRepositoryImpl;
 
@@ -17,5 +19,13 @@ public class AppConfiguration {
 	@Scope(scopeName="singleton")
 	public MovieRepository getMovieRepository() {
 		return new MovieRepositoryImpl();
+	}
+	
+	// This method returns a bean
+	@Bean(value="forumRepository")
+	// Defines the scope of the bean (singleton is the default)
+	@Scope(scopeName="singleton")
+	public ForumRepository getForumRepository() {
+		return new ForumRepositoryImpl();
 	}
 }

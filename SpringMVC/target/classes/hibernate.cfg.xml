@@ -37,6 +37,8 @@
  		<mapping class="com.revature.model.Movie"/>
  		<mapping class="com.revature.model.Genre"/>
  		<mapping class="com.revature.model.Academy"/>
+ 		<mapping class="com.revature.model.Forum"/>
+ 		
  		</session-factory>
  		</hibernate-configuration>
  		
