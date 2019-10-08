@@ -41,6 +41,7 @@
 			<version>5.4.2.Final</version>
 		</dependency>
 <<<<<<< HEAD
+<<<<<<< HEAD
 	</dependencies>
 	<build>
    <plugins>
@@ -117,4 +118,32 @@
 
 	</dependencies>
 >>>>>>> 1b7e12cdb5e201d790bbd4427890b528df711459
+=======
+		<!-- https://mvnrepository.com/artifact/org.springframework/spring-web -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-web</artifactId>
+			<version>5.2.0.RELEASE</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.springframework/spring-webmvc -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-webmvc</artifactId>
+			<version>5.2.0.RELEASE</version>
+		</dependency>
+	</dependencies>
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.5.1</version>
+				<configuration>
+					<source>1.8</source>
+					<target>1.8</target>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+>>>>>>> d781b90a75903a5daa7819a91431ac43f3ebf814
 </project>

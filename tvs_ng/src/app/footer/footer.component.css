@@ -1,13 +1,5 @@
-#footerC
-{
+#foot {
     background: url("black_camo.jpg") center fixed;
-    align-content: center;
-    align-items: center;
-    text-align: center;
-}
-
-#footerP
-{
     position: fixed;
     left: 0;
     bottom: 0;
