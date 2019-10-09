@@ -1,4 +1,4 @@
-package com.tvs.model;
+package com.revature.model;
 
 public class GetGeo {
 

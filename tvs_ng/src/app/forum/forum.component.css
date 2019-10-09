@@ -39,3 +39,8 @@ aside
     background: url("feature_2.jpg") no-repeat center;
     background-size: cover;
 }
+
+.margin-below-forum 
+{
+    margin-bottom: 5%;
+}

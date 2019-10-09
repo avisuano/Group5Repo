@@ -6,6 +6,7 @@ import { CreateAccountComponent } from './create-account/create-account.componen
 import { SearchComponent } from './search/search.component';
 import { ForumComponent } from './forum/forum.component';
 import { VetdecComponent } from './vetdec/vetdec.component';
+import { NewforumpostComponent } from './newforumpost/newforumpost.component';
 
 
 const routes: Routes = 
@@ -33,6 +34,10 @@ const routes: Routes =
   {
     path: "vetdec",
     component: VetdecComponent
+  },
+  {
+    path: "newforumpost",
+    component: NewforumpostComponent
   }
 ];
 

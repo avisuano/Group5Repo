@@ -5,11 +5,11 @@
             <div class="row">
                 <div class="col-md-4"></div>
                 <div class="col-md-4">
-                    <form class="form-signin">
+                    <form class="form-signin" action="http://localhost:8080/SpringMVC/login" method="POST">
                         <h1 class="h3 mb-3 font-weight: 550" style="color: white">Please sign in</h1>
-                        <input class="form-control" placeholder="Username" required autofocus>
-                        <label for="inputPassword" class="sr-only">Password</label>
-                        <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+                        <input class="form-control" name="username" placeholder="Username" required autofocus>
+                        <label for="password" class="sr-only">Password</label>
+                        <input type="password" name="password" class="form-control" placeholder="Password" required>
                         <div class="checkbox mb-3">
                             <label style="color: white">
                                 <input type="checkbox" value="remember-me"> Remember me
