@@ -54,9 +54,10 @@
         <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
           <div class="col p-4 d-flex flex-column position-static">
             <strong class="d-inline-block mb-2 text-primary">World</strong>
-            <h3 class="mb-0">Featured post</h3>
-            <div class="mb-1 text-muted">Oct 12</div>
-            <p class="card-text mb-auto">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
+            <h3 class="mb-0">New Military Events</h3>
+            <div class="mb-1 text-muted">Oct 7</div>
+            <p class="card-text mb-auto">Follow this page to keep track of important 
+              military dates and events that are covered throughout the year.</p>
             <a routerLink="../forum" class="stretched-link">Continue reading</a>
           </div>
           <div class="world-feature col-auto d-none d-lg-block">
@@ -69,9 +70,10 @@
         <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
           <div class="col p-4 d-flex flex-column position-static">
             <strong class="d-inline-block mb-2 text-success">Gear</strong>
-            <h3 class="mb-0">Post title</h3>
-            <div class="mb-1 text-muted">Oct 11</div>
-            <p class="mb-auto">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
+            <h3 class="mb-0">Tactical Gear on Sale</h3>
+            <div class="mb-1 text-muted">Sep 30</div>
+            <p class="mb-auto">Swat Tahoe Training 9-19-11 a WT 
+              Tactical gear in a training exercise on Lake Tahoe.</p>
             <a routerLink="../forum" class="stretched-link">Continue reading</a>
           </div>
           <div class="col-auto d-none d-lg-block">
@@ -96,12 +98,14 @@
                   <th scope="col">#</th>
                   <th scope="col">Title</th>
                   <th scope="col">Details</th>
+                  <th scope="col">Options</th>
                 </tr>
               </thead>
               <tbody *ngFor="let d of data">
                   <td>{{d.forum_id}}</td>
                   <td>{{d.title}}</td>
                   <td>{{d.body}}</td>
+                  <td><button type='button' class='btn btn-outline-secondary btn-sm' routerLink="../forumpost">View</button></td>
               </tbody>
             </table>
         </section>
