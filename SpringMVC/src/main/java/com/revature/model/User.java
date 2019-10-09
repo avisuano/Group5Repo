@@ -21,6 +21,8 @@ public class User {
 	private String lastname;
 	@Column(name="username")
 	private String username;
+	@Column(name="password")
+	private String password;
 	@Column(name="email")
 	private String email;
 	@Column(name="street_address")
@@ -41,13 +43,14 @@ public class User {
 		// TODO Auto-generated constructor stub
 	}
 
-	public User(int user_id, String firstname, String lastname, String username, String email, String street_address,
-			String country, String state, int zip, boolean isAdmin, int isOffensiveCounter) {
+	public User(int user_id, String firstname, String lastname, String username, String password, String email,
+			String street_address, String country, String state, int zip, boolean isAdmin, int isOffensiveCounter) {
 		super();
 		this.user_id = user_id;
 		this.firstname = firstname;
 		this.lastname = lastname;
 		this.username = username;
+		this.password = password;
 		this.email = email;
 		this.street_address = street_address;
 		this.country = country;
@@ -87,6 +90,14 @@ public class User {
 
 	public void setUsername(String username) {
 		this.username = username;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
 	}
 
 	public String getEmail() {
@@ -148,9 +159,9 @@ public class User {
 	@Override
 	public String toString() {
 		return "User [user_id=" + user_id + ", firstname=" + firstname + ", lastname=" + lastname + ", username="
-				+ username + ", email=" + email + ", street_address=" + street_address + ", country=" + country
-				+ ", state=" + state + ", zip=" + zip + ", isAdmin=" + isAdmin + ", isOffensiveCounter="
-				+ isOffensiveCounter + "]";
+				+ username + ", password=" + password + ", email=" + email + ", street_address=" + street_address
+				+ ", country=" + country + ", state=" + state + ", zip=" + zip + ", isAdmin=" + isAdmin
+				+ ", isOffensiveCounter=" + isOffensiveCounter + "]";
 	}
 
 	@Override
@@ -163,6 +174,7 @@ public class User {
 		result = prime * result + (isAdmin ? 1231 : 1237);
 		result = prime * result + isOffensiveCounter;
 		result = prime * result + ((lastname == null) ? 0 : lastname.hashCode());
+		result = prime * result + ((password == null) ? 0 : password.hashCode());
 		result = prime * result + ((state == null) ? 0 : state.hashCode());
 		result = prime * result + ((street_address == null) ? 0 : street_address.hashCode());
 		result = prime * result + user_id;
@@ -203,6 +215,11 @@ public class User {
 			if (other.lastname != null)
 				return false;
 		} else if (!lastname.equals(other.lastname))
+			return false;
+		if (password == null) {
+			if (other.password != null)
+				return false;
+		} else if (!password.equals(other.password))
 			return false;
 		if (state == null) {
 			if (other.state != null)

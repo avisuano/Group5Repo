@@ -149,5 +149,55 @@ public class UserRepositoryImpl implements UserRepository {
 		}
 		
 	}
+
+	@Override
+	public User getUserByUsername(String username) {
+		User u = null;
+		Session s = null;
+		Transaction tx = null;
+		
+		try {
+			s = SessionFactory.getSession();
+			tx = s.beginTransaction();
+			CriteriaBuilder cb = s.getCriteriaBuilder();
+			CriteriaQuery<User> cq = cb.createQuery(User.class);
+			Root<User> root = cq.from(User.class);
+			cq.select(root).where(cb.equal(root.get("username"), username));
+			Query q = s.createQuery(cq);
+			u = (User) q.getSingleResult();
+			tx.commit();
+		}catch(HibernateException e) {
+			e.printStackTrace();
+			tx.rollback();
+		}finally {
+			s.close();
+		}
+		return u;
+	}
+
+	@Override
+	public User getUserByPassword(String password) {
+		User u = null;
+		Session s = null;
+		Transaction tx = null;
+		
+		try {
+			s = SessionFactory.getSession();
+			tx = s.beginTransaction();
+			CriteriaBuilder cb = s.getCriteriaBuilder();
+			CriteriaQuery<User> cq = cb.createQuery(User.class);
+			Root<User> root = cq.from(User.class);
+			cq.select(root).where(cb.equal(root.get("password"), password));
+			Query q = s.createQuery(cq);
+			u = (User) q.getSingleResult();
+			tx.commit();
+		}catch(HibernateException e) {
+			e.printStackTrace();
+			tx.rollback();
+		}finally {
+			s.close();
+		}
+		return u;
+	}
 	
 }
