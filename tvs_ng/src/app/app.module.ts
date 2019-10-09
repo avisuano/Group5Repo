@@ -17,6 +17,7 @@ import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
 import { ForumpostComponent } from './forumpost/forumpost.component';
 import { HttpClientModule } from '@angular/common/http';
+import { NewforumpostComponent } from './newforumpost/newforumpost.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { HttpClientModule } from '@angular/common/http';
     VetdecComponent,
     AboutComponent,
     ContactComponent,
-    ForumpostComponent
+    ForumpostComponent,
+    NewforumpostComponent
   ],
   imports: [
     BrowserModule,

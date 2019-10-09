@@ -28,6 +28,16 @@ public class UserService {
 			return userRepository.getUserById(id);
 		}
 		
+		// Get by user user name
+		public User getUserByUsername(String username) {
+			return userRepository.getUserByUsername(username);
+		}
+		
+		// Get by user password
+		public User getUserByPassword(String password) {
+			return userRepository.getUserByUsername(password);
+		}
+		
 		// Get user by first name
 		public User getUserByName(String firstname) {
 			return userRepository.getUserByName(firstname);

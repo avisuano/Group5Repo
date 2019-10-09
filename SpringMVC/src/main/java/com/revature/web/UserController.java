@@ -4,15 +4,16 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -65,5 +66,28 @@ private UserService userService;
 		return userService.getUserById(id);
 	}
 	
-
+	/*
+	 * USER LOGIN
+	 */
+//	@RequestMapping(value = "/login", method = RequestMethod.GET)
+//	  public String init(Model model) {
+//	    model.addAttribute("msg", "Please Enter Your Login Details");
+//	    return "login";
+//	  }
+//
+//	  @RequestMapping(method = RequestMethod.POST)
+//	  public String submit(Model model, @ModelAttribute("Userlogin") User userLogin) {
+//	    if (userLogin != null && userLogin.getUsername() != null & userLogin.getPassword() != null) {
+//	      if (userLogin.getUsername().equals("username1") && userLogin.getPassword().equals("password")) {
+//	        model.addAttribute("msg", userLogin.getUsername());
+//	        return "success";
+//	      } else {
+//	        model.addAttribute("error", "Invalid Details");
+//	        return "login";
+//	      }
+//	    } else {
+//	      model.addAttribute("error", "Please enter Details");
+//	      return "login";
+//	    }
+//	  }	
 }
