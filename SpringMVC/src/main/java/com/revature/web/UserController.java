@@ -3,9 +3,7 @@ package com.revature.web;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -67,9 +65,5 @@ private UserService userService;
 		return userService.getUserById(id);
 	}
 	
-	// @RequestParam grabs the parameter from the query string
-	@GetMapping(value="/byId")
-	public User getUserById(@RequestParam int id) {
-		return userService.getUserById(id);
-	}	
+
 }
