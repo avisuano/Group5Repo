@@ -18,6 +18,7 @@ import { ContactComponent } from './contact/contact.component';
 import { ForumpostComponent } from './forumpost/forumpost.component';
 import { HttpClientModule } from '@angular/common/http';
 import { NewforumpostComponent } from './newforumpost/newforumpost.component';
+import { AgmCoreModule } from '@agm/core';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,10 @@ import { NewforumpostComponent } from './newforumpost/newforumpost.component';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyBERe0UJKwjez5wZByGBUoEAQx0cy67vEk'
+    })
   ],
   providers: [],
   bootstrap: [AppComponent, HomeComponent]
