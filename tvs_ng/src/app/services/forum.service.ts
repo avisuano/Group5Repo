@@ -15,7 +15,7 @@ export class ForumService {
   constructor(private http:HttpClient) { }
 
   getAllForums():Observable<Forum[]>{
-    return this.http.get("http://192.168.0.2:8088/ServletDemo/getflix/api/movies") as Observable<Forum[]>;
+    return this.http.get("http://localhost:8080/SpringMVC/forum/all") as Observable<Forum[]>;
   }
 
   /**
@@ -28,15 +28,10 @@ export class ForumService {
     // Constructing our body by adding our parameters. 
     // Notice that we are specifying the name by which we must grab each parameter
     // using the getParameter() method provided by the Servlet API.
-    let body = new HttpParams().set("forum_id", forum.forum_id.toString())
-                              .set("title", forum.title)
-                              .set("body", forum.body.toString())
-                              .set("isOffensive", forum.isOffensive.toString())
-                              .set("replies", forum.replies.toString())
-                              .set("user_id", forum.user_id.toString());
+    let body = new HttpParams().set("forum_id", forum.forum_id.toString()).set("title", forum.title).set("body", forum.body.toString()).set("isOffensive", forum.isOffensive.toString()).set("replies", forum.replies.toString()).set("user_id", forum.user_id.toString());
 
     //Now let's hit our endpoing, attaching our body and headers.
-    return this.http.post("http://localhost:8088/ServletDemo/AngularPostRequest", {headers: headers});
+    return this.http.post("http://localhost:8080/SpringMVC/forum/insert", {headers: headers});
   }
 
   
