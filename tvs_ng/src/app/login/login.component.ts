@@ -12,4 +12,8 @@ export class LoginComponent implements OnInit
   {
     
   }
+  userLogin()
+  {
+    let i:number = 0;
+  }
 }
