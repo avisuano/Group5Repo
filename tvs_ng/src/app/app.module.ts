@@ -19,6 +19,7 @@ import { ForumpostComponent } from './forumpost/forumpost.component';
 import { HttpClientModule } from '@angular/common/http';
 import { NewforumpostComponent } from './newforumpost/newforumpost.component';
 import { AgmCoreModule } from '@agm/core';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { AgmCoreModule } from '@agm/core';
     AboutComponent,
     ContactComponent,
     ForumpostComponent,
-    NewforumpostComponent
+    NewforumpostComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,

@@ -7,6 +7,7 @@ import { SearchComponent } from './search/search.component';
 import { ForumComponent } from './forum/forum.component';
 import { VetdecComponent } from './vetdec/vetdec.component';
 import { NewforumpostComponent } from './newforumpost/newforumpost.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 
 const routes: Routes = 
@@ -38,6 +39,10 @@ const routes: Routes =
   {
     path: "newforumpost",
     component: NewforumpostComponent
+  },
+  {
+    path: "dashboard",
+    component: DashboardComponent
   }
 ];
 
