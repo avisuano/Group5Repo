@@ -1,9 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { AgmCoreModule, MapsAPILoader } from '@agm/core';
-import { Observable } from 'rxjs/internal/Observable';
-
-declare var google: any
+import { SearchService } from '../services/search.service';
+import { google } from '@agm/core/services/google-maps-types';
 
 @Component({
   selector: 'app-search',
@@ -12,32 +9,34 @@ declare var google: any
 })
 export class SearchComponent implements OnInit {
 
-  geocoder: any
   private address: ''
   private lat = 44.9428975;
   private lng = -123.0350963;
 
-  constructor(private http: HttpClient) {
+  constructor(private ss:SearchService) {
   }
 
   ngOnInit() {
+    this.getAdr(this.address)
   }
 
-
   getAdr(address: string) {
-    // Trying to make sure the values change
-    console.log("Longitude after address search " + this.lat)
-    console.log("Latitude after address search " + this.lng)
-
     // Remove the whitespace and replace with +'s
-    let url = address.split(' ').join('+')
+    let url = this.address.split(' ').join('+')
     // Build the complete url to send to Google Geocode to get the latitude and longitude
     let qurl = 'https://maps.googleapis.com/maps/api/geocode/json?address=' + url + '&key=AIzaSyBERe0UJKwjez5wZByGBUoEAQx0cy67vEk'
-    // Does the URL send me where it's supposed to?
-    console.log(qurl)
-    this.http.get(qurl).subscribe(data => {
-      // Did I get the right JSON result from the API call?
+    // Can I get an api call?
+    this.ss.getAdr(qurl).subscribe( data => { 
       console.log(data)
+    })
+
+    let geocoder = new google.maps.Geocoder()
+    geocoder.geocde({'address' : this.address}, function(results, status){
+      if(status === google.maps.GeocoderStatus.OK){
+        this.lat = results[0].geometry.location.lat()
+        this.lng = results[0].geometry.location.lng()
+        console.log(this.lat + ', ' + this.lng)
+      }
     })
 
     // Display the map
