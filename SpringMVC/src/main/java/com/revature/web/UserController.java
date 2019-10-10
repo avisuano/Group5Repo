@@ -67,10 +67,10 @@ private UserService userService;
 	{
 		return userService.getUserById(id);
 	}
-	 @GetMapping(value="/login")
-	 public User login(@RequestParam String user, String password)
+	 @PostMapping(value="/login")
+	 public User login(@RequestParam String user, @RequestParam String password)
 	 {
-		 System.out.println("hi");
+		 System.out.println("hi "+ user +" " + password);
 		 return userService.getUserByUsername(user);
 	 }
 	/*

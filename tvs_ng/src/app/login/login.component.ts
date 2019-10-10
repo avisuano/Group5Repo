@@ -15,9 +15,10 @@ export class LoginComponent implements OnInit
   }
   userLogin()
   {
+    console.log("we made it!")
     let username = (<HTMLInputElement>document.getElementById("username")).value;
     let password = (<HTMLInputElement>document.getElementById("password")).value;
-
+    console.log(username + " " + password)
     this.usr.userLogin(username,password);
   }
 }
