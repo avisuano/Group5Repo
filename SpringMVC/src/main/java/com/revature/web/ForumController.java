@@ -18,7 +18,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.revature.exception.NonExistentMovieException;
 import com.revature.model.Forum;
 import com.revature.service.ForumService;
 
@@ -43,14 +42,6 @@ public class ForumController {
 		return "index";
 	}
 	
-	/*
-	 * Handler that will handle each NonExistentMovieException that is thrown
-	 */
-	@ExceptionHandler(NonExistentMovieException.class)
-	public String error() {
-		return "This would have returned a 404 page if it was a generic controller.";
-	}
-	
 	@GetMapping(value="/all", produces=MediaType.APPLICATION_JSON_VALUE)
 	@ResponseBody
 	public List<Forum> getAllForums(){
@@ -61,7 +52,7 @@ public class ForumController {
 	 * The PostMapping annotation denotes that this method accepts post requests.
 	 */
 	@PostMapping(value="/insert")
-	public void insertMovie(@RequestBody Forum f) {
+	public void insertForum(@RequestBody Forum f) {
 		forumService.insertForum(f);
 	}
 

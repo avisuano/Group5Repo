@@ -6,8 +6,6 @@ import org.springframework.context.annotation.Scope;
 
 import com.revature.respository.ForumRepository;
 import com.revature.respository.ForumRepositoryImpl;
-import com.revature.respository.MovieRepository;
-import com.revature.respository.MovieRepositoryImpl;
 import com.revature.respository.UserRepository;
 import com.revature.respository.UserRepositoryImpl;
 
@@ -15,12 +13,6 @@ import com.revature.respository.UserRepositoryImpl;
 @Configuration
 public class AppConfiguration {
 
-	@Bean(value="movieRepository2")
-	@Scope(scopeName="singleton")
-	public MovieRepository getMovieRepository() {
-		return new MovieRepositoryImpl();
-	}
-	
 	@Bean(value="forumRepository")
 	@Scope(scopeName="singleton")
 	public ForumRepository getForumRepository() {
