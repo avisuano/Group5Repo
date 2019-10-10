@@ -18,7 +18,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.revature.exception.NonExistentMovieException;
 import com.revature.model.User;
 import com.revature.service.UserService;
 
@@ -38,14 +37,6 @@ private UserService userService;
 	@RequestMapping(value="/home", method=RequestMethod.GET)
 	public String getHome() {
 		return "index";
-	}
-	
-	/*
-	 * Handler that will handle each NonExistentMovieException that is thrown
-	 */
-	@ExceptionHandler(NonExistentMovieException.class)
-	public String error() {
-		return "This would have returned a 404 page if it was a generic controller.";
 	}
 	
 	// A more specific RequestMapping this has the HTTP methods built in. 

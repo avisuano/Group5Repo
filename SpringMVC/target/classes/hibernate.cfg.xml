@@ -34,9 +34,6 @@
  		<property name="hibernate.current_session_context_class">thread</property>
  		<!-- <mapping resource="gnere.hbm.xml"/> -->
  		<!-- This tells the session factory which classes and resources being mapped to from the Java models to the DB entities -->
- 		<mapping class="com.revature.model.Movie"/>
- 		<mapping class="com.revature.model.Genre"/>
- 		<mapping class="com.revature.model.Academy"/>
  		<mapping class="com.revature.model.Forum"/>
  		<mapping class="com.revature.model.User"/>
  		

@@ -3,7 +3,6 @@ package com.revature;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-import com.revature.service.MovieService;
 import com.revature.service.UserService;
 import com.revature.service.ForumService;
 
@@ -12,12 +11,9 @@ public class Controller {
 	public static void main(String[] args) {
 		
 		ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
-		MovieService movieService = context.getBean("movieService", MovieService.class);
 		ForumService forumService = context.getBean("forumService", ForumService.class);
 		UserService userService = context.getBean("userService", UserService.class);
 		
-		System.out.println(movieService.getAllMovies());
-		System.out.println(movieService.getMovieById(1));
 		System.out.println(forumService.getAllForums());
 		System.out.println(userService.getAllUsers());
 		

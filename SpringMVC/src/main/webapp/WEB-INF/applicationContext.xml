@@ -15,43 +15,7 @@
 	<!-- This is to enable annotation driven approach to declaring beans, etc. -->
 	<context:annotation-config></context:annotation-config>
 	<!-- This tells the framework which packages to scan, always be as specific as possible. -->
-	<context:component-scan base-package="com.revature.respository"></context:component-scan>
-	<context:component-scan base-package="com.revature.service"></context:component-scan>
 	<!-- <context:component-scan base-package="com.revature.aspect"></context:component-scan> -->
 	<aop:aspectj-autoproxy></aop:aspectj-autoproxy>
 	
-	
-	<!-- This is how a bean is defined, name can be what ever you want, and 
-		the class is the fully qualified class name. The name is how we must refer 
-		to this bean throughout the application. Use the name to get an instance 
-		of the bean -->
-	<!-- Scope is default singleton, the other option is prototype -->
-	<!-- <bean name="movieRepository" class="com.revature.respository.MovieRepositoryImpl" scope="singleton"></bean>
-	<bean name="movieService" class="com.revature.service.MovieService" autowire="constructor"> -->
-		<!-- This is where you set dependencies with manual wiring (stringing the 
-			beans together). The property tag specifies that the movie service has a 
-			movieRepository bean as a reference. There are three ways to Setter, Field, 
-			and Constructor injection, below is an example of Setter Injection. This 
-			is default if no other injection is implied -->
-		<!-- <property name="movieRepository" ref="movieRepository"></property> -->
-	    <!-- This is a constructor injection instead -->
-		<!-- <constructor-arg index="0" ref="movieRepository"></constructor-arg> -->
-	<!-- </bean> -->
-	<!-- Autowiring Beans: 
-	When we string the beans, we don't have to explicitly create the relationships between beans (as above).
-	We can instead define our bean and tell the framework to wire them in for us as needed We can tell the 
-	framework to wire these in for us byType, byName, or constructor.
-	
-	byName: the framework looks for a property with a given name in the current IOC Container. If there is 
-	no bean, nothing special happens. 
-	
-	byType: the framework looks for a property with the given reference type in the current IOC Container. If there
-	is no bean, nothing special happens. Further still, if there is more than one bean of this type in the
-	container, an error is raised as the framework will not know which bean to instantiate. This solution is 
-	to autowire byName instead.
-	
-	constructor: the framework looks for an argument of the given reference type in the constructor. If there is
-	not exactly one bean of the constructor argument type in the factory, a fatal error is raised as the 
-	framework will not know which bean to instantiate.
-	 -->
 </beans>
