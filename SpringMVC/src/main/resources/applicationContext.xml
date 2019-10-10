@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- This XML file serves as our Application Context (our Bean Factory). 
+	Here is where you define your Spring Beans, and then wire them together. 
+	Spring modules are configured here. -->
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:c="http://www.springframework.org/schema/c"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.3.xsd
+        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+
+	<!-- This is to enable annotation driven approach to declaring beans, etc. -->
+	<context:annotation-config></context:annotation-config>
+	<!-- This tells the framework which packages to scan, always be as specific as possible. -->
+	<context:component-scan base-package="com.revature.respository"></context:component-scan>
+	<context:component-scan base-package="com.revature.service"></context:component-scan>
+	<!-- <context:component-scan base-package="com.revature.aspect"></context:component-scan> -->
+	<aop:aspectj-autoproxy></aop:aspectj-autoproxy>
+	
+</beans>

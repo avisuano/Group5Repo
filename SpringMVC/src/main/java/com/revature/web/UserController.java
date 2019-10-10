@@ -67,35 +67,11 @@ private UserService userService;
 	{
 		return userService.getUserById(id);
 	}
-	 @GetMapping(value="/login")
-	 public User login(@RequestParam String user, String password)
+	
+	@PostMapping(value="/login")
+	 public User login(@RequestParam String user, @RequestParam String password)
 	 {
-		 System.out.println("hi");
+		 System.out.println("hi "+ user +" " + password);
 		 return userService.getUserByUsername(user);
 	 }
-	/*
-	 * USER LOGIN
-	 */
-	
-//	@RequestMapping(value = "/login", method = RequestMethod.GET)
-//	  public String init(Model model) {
-//	    model.addAttribute("msg", "Please Enter Your Login Details");
-//	    return "login";
-//	  }
-//
-//	  @RequestMapping(method = RequestMethod.POST)
-//	  public String submit(Model model, @ModelAttribute("Userlogin") User userLogin) {
-//	    if (userLogin != null && userLogin.getUsername() != null & userLogin.getPassword() != null) {
-//	      if (userLogin.getUsername().equals("username1") && userLogin.getPassword().equals("password")) {
-//	        model.addAttribute("msg", userLogin.getUsername());
-//	        return "success";
-//	      } else {
-//	        model.addAttribute("error", "Invalid Details");
-//	        return "login";
-//	      }
-//	    } else {
-//	      model.addAttribute("error", "Please enter Details");
-//	      return "login";
-//	    }
-//	  }	
 }
