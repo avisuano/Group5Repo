@@ -36,18 +36,7 @@ export class LoginComponent implements OnInit
 
     console.log(username + " " + password)
     this.usr.userLogin(username,password);
-<<<<<<< HEAD
-    let firstname:string;
-    //firstname = this.usr[1].firstname;
-    console.log(this.usr[1])
-
-    
-  }
-
-}
-=======
 
   }
 
 }
->>>>>>> Leah
