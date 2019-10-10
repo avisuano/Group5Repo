@@ -1,0 +1,44 @@
+#bg {background-image: url("black_camo.jpg")}
+
+#background
+{
+    background: url(plane.jpg) center fixed;
+    background-size: 100%;
+    padding: 2pc
+}
+#logo
+{
+    background: url("navy.png");
+    background-size: 100%;
+    padding:12pc
+}
+#logo2
+{
+    background: url("army.png");
+    background-size: 100%;
+    padding:12pc 
+}
+#logo3
+{
+    background: url("airforce.png");
+    background-size: 100%;
+    padding:12pc 
+}
+#logo4
+{
+    background: url("coast.png");
+    background-size: 100%;
+    padding:12pc 
+}
+#logo5
+{
+    background: url("marines.png");
+    background-size: 100%;
+    padding:12pc 
+}
+#btn
+{
+    border-color: color;
+    background-color: coral;
+    outline-color: coral
+}

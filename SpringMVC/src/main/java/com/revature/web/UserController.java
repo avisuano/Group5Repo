@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -62,10 +63,16 @@ private UserService userService;
 	}
 	
 	@GetMapping(value="/{id}")
-	public User getById(@PathVariable int id){
+	public User getById(@PathVariable int id)
+	{
 		return userService.getUserById(id);
 	}
-	
+	 @GetMapping(value="/login")
+	 public User login(@RequestParam String user, String password)
+	 {
+		 System.out.println("hi");
+		 return userService.getUserByUsername(user);
+	 }
 	/*
 	 * USER LOGIN
 	 */
