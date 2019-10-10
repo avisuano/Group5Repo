@@ -21,7 +21,5 @@ export class ForumService {
 
     //Now let's hit our endpoing, attaching our body and headers.
     return this.http.post("http://localhost:8080/SpringMVC/forum/insert", {headers: headers});
-  }
-
-  
+  } 
 }
