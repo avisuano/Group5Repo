@@ -15,8 +15,6 @@
 	<!-- This is to enable annotation driven approach to declaring beans, etc. -->
 	<context:annotation-config></context:annotation-config>
 	<!-- This tells the framework which packages to scan, always be as specific as possible. -->
-	<context:component-scan base-package="com.revature.respository"></context:component-scan>
-	<context:component-scan base-package="com.revature.service"></context:component-scan>
 	<!-- <context:component-scan base-package="com.revature.aspect"></context:component-scan> -->
 	<aop:aspectj-autoproxy></aop:aspectj-autoproxy>
 	

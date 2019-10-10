@@ -52,7 +52,7 @@ public class ForumController {
 	 * The PostMapping annotation denotes that this method accepts post requests.
 	 */
 	@PostMapping(value="/insert")
-	public void insertMovie(@RequestBody Forum f) {
+	public void insertForum(@RequestBody Forum f) {
 		forumService.insertForum(f);
 	}
 
