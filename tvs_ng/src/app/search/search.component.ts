@@ -15,11 +15,12 @@ interface LatLng {
   templateUrl: './search.component.html',
   styleUrls: ['./search.component.css']
 })
+
 export class SearchComponent implements OnInit {
 
   private address: ''
-  private lat = 44.9428975;
-  private lng = -123.0350963;
+  private lat = 32.735687;
+  private lng = -97.10806559999997;
 
   constructor(private http: HttpClient) { }
 
@@ -41,7 +42,6 @@ export class SearchComponent implements OnInit {
     let url = address.split(' ').join('+')
     // Build the complete url to send to GeoCode to get the latitude and longitude
     let qurl = 'https://maps.googleapis.com/maps/api/geocode/json?address=' + url + '&key=AIzaSyBERe0UJKwjez5wZByGBUoEAQx0cy67vEk'
-
     console.log(qurl)
 
     // Un-hide the map
