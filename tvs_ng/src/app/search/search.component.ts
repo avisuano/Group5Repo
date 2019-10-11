@@ -3,7 +3,9 @@ import { HttpClient } from '@angular/common/http';
 import { AgmCoreModule } from '@agm/core';
 import { Observable } from 'rxjs/internal/Observable';
 
-interface LatLng{
+declare var google: any
+
+interface LatLng {
   lat: number
   lng: number
 }
@@ -26,9 +28,14 @@ export class SearchComponent implements OnInit {
 
 
   getAdr(address: string) {
-    // Un-hide the map
-    var x = document.getElementById("map");
-    x.style.display = "block";
+
+    let geocoder = new google.maps.Geocoder()
+    geocoder.geocode({ 'address': this.address }, function (results) {
+      this.lat = results[0].geometry.location.lat()
+      this.lng = results[0].geometry.location.lng()
+      console.log('Inside the function ' + this.lat + ', ' + this.lng)
+    })
+    console.log('After the function ' + this.lat + ', ' + this.lng)
 
     // Remove the whitespace and replace with +'s
     let url = address.split(' ').join('+')
@@ -36,5 +43,9 @@ export class SearchComponent implements OnInit {
     let qurl = 'https://maps.googleapis.com/maps/api/geocode/json?address=' + url + '&key=AIzaSyBERe0UJKwjez5wZByGBUoEAQx0cy67vEk'
 
     console.log(qurl)
+
+    // Un-hide the map
+    var x = document.getElementById("map");
+    x.style.display = "block";
   }
 }
