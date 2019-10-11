@@ -15,11 +15,9 @@ export class ForumService {
   }
 
   submitForum(forum:Forum){
-    let headers = new HttpHeaders().set("Content-Type", "application/x-www-form-urlencoded");
+    let headers = new HttpHeaders().set("Content-Type", "application/json");
+    console.log("Before Request" + JSON.stringify(forum));
 
-    let body = new HttpParams().set("forum_id", forum.forum_id.toString()).set("title", forum.title).set("body", forum.body.toString()).set("isOffensive", forum.isOffensive.toString()).set("replies", forum.replies.toString()).set("user_id", forum.user_id.toString());
-
-    //Now let's hit our endpoing, attaching our body and headers.
-    return this.http.post("http://localhost:8080/SpringMVC/forum/insert", {headers: headers});
-  } 
+    return this.http.post("http://localhost:8080/SpringMVC/forum/insert",JSON.stringify(forum), {headers: headers});
+  }
 }

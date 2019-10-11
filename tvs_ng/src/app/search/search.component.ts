@@ -43,6 +43,7 @@ export class SearchComponent implements OnInit {
     // Build the complete url to send to GeoCode to get the latitude and longitude
     let qurl = 'https://maps.googleapis.com/maps/api/geocode/json?address=' + url + '&key=AIzaSyBERe0UJKwjez5wZByGBUoEAQx0cy67vEk'
     console.log(qurl)
+    
 
     // Un-hide the map
     var x = document.getElementById("map");
