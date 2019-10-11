@@ -5,9 +5,9 @@
         <div  class="container">
           <h1 class="display-3" style="font-weight: 600;color:white;text-shadow:0px 0px 8px black">Welcome to VetDEC!</h1>
           <p style="font-weight: 800;color:white;text-shadow:0px 0px 8px black">
-            Vet Duty of Education Campaign is the part of this website that focus on providing basic knowledge of the military 
+            Vet Duty of Education Campaign is the part of this website that focus on providing basic knowledge of the military
             and informative resources for veterans to utilize. We hope to bring light services that are available to our veterans
-            across the country to assist our them with life after service. It's our duty to come together as communities and give 
+            across the country to assist our them with life after service. It's our duty to come together as communities and give
             a helping hand to those who service our  country
           </p>
         </div>
@@ -19,7 +19,7 @@
             <div class="col-md-4">
                 <h1 style="font-weight: 600;color:white;text-shadow:0px 0px 8px black">Post 9/11 GI Bill</h1>
                 <p style="font-weight: 800;color:white;text-shadow:0px 0px 8px black">
-                        The Post-9/11 GI Bill (Chapter 33) helps you pay for school or job training. If you’ve served 
+                        The Post-9/11 GI Bill (Chapter 33) helps you pay for school or job training. If you’ve served
                         on active duty after September 10, 2001, you may qualify for the Post-9/11 GI Bill (Chapter 33).
                         Find out if you can get this education benefit.
                     </p>
@@ -28,7 +28,7 @@
             <div class="col-md-4">
                 <h1 style="font-weight: 600;color:white;text-shadow:0px 0px 8px black">PTSD</h1>
                 <p style="font-weight: 800;color:white;text-shadow:0px 0px 8px black">
-                        Post-traumatic stress disorder (PTSD) is a mental health condition that's triggered by a terrifying event — 
+                        Post-traumatic stress disorder (PTSD) is a mental health condition that's triggered by a terrifying event —
                         either experiencing it or witnessing it. Symptoms may include flashbacks, nightmares and severe anxiety, as
                         well as uncontrollable thoughts about the event. Find out more information about PTSD.
                 </p>
@@ -40,7 +40,7 @@
             <div class="col-md-4">
                 <h1 style="font-weight: 600;color:white;text-shadow:0px 0px 8px black">Health Care</h1>
                 <p style="font-weight: 800;color:white;text-shadow:0px 0px 8px black">
-                    With VA health care, you’re covered for checkups with your primary care provider and appointments with specialists. You can access Veterans health care services and get medical equipment, 
+                    With VA health care, you’re covered for checkups with your primary care provider and appointments with specialists. You can access Veterans health care services and get medical equipment,
                     prosthetics, and prescriptions. Find out how to apply for and manage the health care benefits you've earned.
                 </p>
                 <p><a id="btn" class="btn btn-secondary" href="https://www.va.gov/health-care/" role="button">View details &raquo;</a></p>
@@ -49,40 +49,58 @@
         <br><br>
         <div class="row">
             <div class="col-md-4">
-                <a  href="https://www.va.gov/education/about-gi-bill-benefits/post-9-11/" role="button">
-                    <div id="logo"></div>
-                </a>
+                    <div (click)="showNavy()" id="logo"></div>
+                    <p [hidden]="hiddenNavy" style="font-weight: 800;color:white;text-shadow:0px 0px 8px black">
+                    The Navy maintains, trains, and equips combat-ready naval forces capable of winning wars, deterring aggression and maintaining the freedom of
+                    the seas. U.S. Navy personnel expertly operate virtually every type of military equipment in U.S. arsenal, everything from HumVees to Aircraft Carriers.</p>
+                    <iframe [hidden]="hiddenNavy" width="350" height="350" src="https://www.youtube.com/embed/V0FONk_7VKY" frameborder="0"
+                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
             <div class="col-md-4">
-            <a  href="https://www.va.gov/education/about-gi-bill-benefits/post-9-11/" role="button">
-                <div id="logo2"></div>
-            </a>
+                <div (click)="showArmy()" id="logo2"></div>
+                <p [hidden]="hiddenArmy" style="font-weight: 800;color:white;text-shadow:0px 0px 8px black">
+                    Brief Summary: The U.S. Army is made up of the most dedicated, most respected Soldiers in the world. These Soldiers protect
+                     America’s freedoms while serving at home and abroad, and they are always prepared to defend the nation in times of need.
+                 </p>
+                <iframe [hidden]="hiddenArmy" width="350" height="350" src="https://www.youtube.com/embed/qjc7H4e621o" frameborder="0"
+                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
             <div class="col-md-4">
-            <a  href="https://www.va.gov/education/about-gi-bill-benefits/post-9-11/" role="button">
-                <div id="logo3"></div>
-            </a>
+            <div (click)="showAirforce()" id="logo3"></div>
+            <p [hidden]="hiddenAirforce" style="font-weight: 800;color:white;text-shadow:0px 0px 8px black">
+                The mission of the United States Air Force is to fly, fight and win in air, space and cyberspace. Our rich history and our
+                vision guide our Airmen as we pursue our mission with excellence and integrity to become leaders, innovators and warriors.
+            </p>
+            <iframe [hidden]="hiddenAirforce" width="350" height="350" src="https://www.youtube.com/embed/tm4e86NVP1o" frameborder="0"
+             allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
         </div>
-        <div class="row"> 
+        <div class="row">
             <div class="col-md-2"></div>
                 <div class="col-md-4">
-                    <a  href="https://www.va.gov/education/about-gi-bill-benefits/post-9-11/" role="button">
-                        <div id="logo4"></div>
-                    </a>
+                <div (click)="showCoastGuard()" id="logo4"></div>
+                <p  [hidden]="hiddenCoastGuard" style="font-weight: 800;color:white;text-shadow:0px 0px 8px black">
+                    The Coast Guard is a unique branch of the military responsible for an array of maritime duties, from ensuring safe and lawful commerce to performing rescue
+                    missions in severe conditions. Nearly 42,000 men and women are actively serving in the Coast Guard to defend America’s borders and protect the maritime environment.
+                </p>
+                <iframe [hidden]="hiddenCoastGuard" width="350" height="350" src="https://www.youtube.com/embed/lUQJHhXiY_A" frameborder="0"
+                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
                 <div class="col-md-4">
-                <a  href="https://www.va.gov/education/about-gi-bill-benefits/post-9-11/" role="button">
-                    <div id="logo5"></div>
-                </a>
+                <div (click)="showMarines()" id="logo5"></div>
+                <p [hidden]="hiddenMarines" style="font-weight: 800;color:white;text-shadow:0px 0px 8px black">
+                    Marines are trained to improvise, adapt and overcome any obstacle in whatever situation they are needed. They have the willingness to engage and the determination to defeat the enemy until victory is seized.
+                    The kinds of battles active-duty Marines fight range from traditional warfare to humanitarian and disaster relief missions (HADR). The fighting spirit that helps them win these battles extends beyond the scope
+                    of their military service, and many Marines continue to serve in the communities where they live.
+                </p>
+                <iframe [hidden]="hiddenMarines" width="350" height="350" src="https://www.youtube.com/embed/4o95R71Bib8" frameborder="0"
+                 allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
             </div>
         <br>
       </div> <!-- /container -->
-    
+   
     </main>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
           <script>window.jQuery || document.write('<script src="/docs/4.3/assets/js/vendor/jquery-slim.min.js"><\/script>')</script><script src="/docs/4.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-xrRywqdh3PHs8keKZN+8zzc5TX0GRTLCcmivcbNJWm2rs5C8PRhcEn3czEjhAO9o" crossorigin="anonymous"></script>
 </body>
-    
-
