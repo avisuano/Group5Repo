@@ -47,7 +47,8 @@ public class ForumRepositoryImpl implements ForumRepository {
 		try {
 			s = SessionFactory.getSession();
 			tx = s.beginTransaction();
-			s.save(f); //inserting new user
+			System.out.println(f);
+			s.save(f); //inserting new forum
 			tx.commit();
 		}catch(HibernateException e) {
 			e.printStackTrace();

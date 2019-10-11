@@ -6,17 +6,17 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.revature.model.Forum;
-import com.revature.respository.ForumRepository;
+import com.revature.respository.ForumRepositoryImpl;
 
 @Service("forumService")
 public class ForumService {
 	
 	@Autowired
-	ForumRepository forumRepository;
+	ForumRepositoryImpl forumRepository;
 //	
 //	//Using constructor injection.
 	
-	public ForumService(ForumRepository forumRepository) {
+	public ForumService(ForumRepositoryImpl forumRepository) {
 		this.forumRepository = forumRepository;
 	}
 	

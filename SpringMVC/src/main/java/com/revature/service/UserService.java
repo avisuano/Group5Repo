@@ -6,13 +6,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.revature.model.User;
-import com.revature.respository.UserRepository;
+import com.revature.respository.UserRepositoryImpl;
 
 @Service("userService")
 public class UserService {
 	
 		@Autowired
-		UserRepository userRepository;
+		UserRepositoryImpl userRepository;
 		// Gets all users
 		public List<User> getAllUsers(){
 			return userRepository.getAllUsers();
