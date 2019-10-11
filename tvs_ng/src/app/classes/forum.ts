@@ -5,10 +5,10 @@ export class Forum{
      */
     constructor(forum_id:number, title:string, body:string, isOffensive:boolean,
         replies:number, user_id:number){
-        this.forum_id = forum_id;
+        this.forum_id = 0;
         this.title = title;
         this.body = body;
-        this.isOffensive = isOffensive;
+        this.isOffensive = false;
         this.replies = replies;
         this.user_id = user_id;
     }
